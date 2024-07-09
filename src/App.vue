@@ -12,5 +12,7 @@ import EventCard from './components/EventCard.vue'
     </header>
   <RouterView />
   </div>
-  <div class="home"></div>
+  <div class="home">
+    <EventCard />
+  </div>
 </template>
