@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import EventCard from './components/EventCard.vue'
+import Organizer from './components/Organizer.vue'
 import Event from '@/types/Event'
 import { ref } from 'vue'
 
@@ -50,8 +51,20 @@ const events = ref<Event[]>([
     </header>
   <RouterView />
   </div>
-  <div class="home">
+  <div class="events">
     <!-- <EventCard /> -->
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
+  <div>
+    <Organizer v-for="event in events" :key="event.id" :event="event" />
+  </div>
 </template>
+
+<style scoped>
+
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
